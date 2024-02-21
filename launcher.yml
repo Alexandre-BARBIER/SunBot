@@ -1,0 +1,8 @@
+apps:
+    - script: main.py
+      name: VRificabot
+      cwd: /home/bots/sunbot
+      interpreter: /usr/bin/python3
+      instances: 1
+      exec_mode: fork
+      exec_interpreter: python3
