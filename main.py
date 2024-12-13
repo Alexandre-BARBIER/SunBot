@@ -1,10 +1,13 @@
+import os
+
 from suntime import Sun, SunTimeException
 from datetime import datetime, timedelta, date
 from telegram import Update, Bot
 from telegram.ext import Application, CommandHandler, CallbackContext
 
 from database import Database
-from conf import TOKEN
+
+TOKEN = os.environ["BOT_TOKEN"]
 
 bot = Bot(TOKEN)
 
@@ -178,5 +181,5 @@ def main():
     application.run_polling(allowed_updates=Update.ALL_TYPES)
 
 if __name__ == '__main__':
-    print("coucou")
+    print("SunBot Started")
     main()
