@@ -113,7 +113,7 @@ async def enable_command(update: Update, context: CallbackContext):
     print("Enabling chat ", chat)
 
     if chat is None:
-        localDatabase.createChat(update.message.chat.id)
+        localDatabase.create_chat(update.message.chat.id)
     chat = localDatabase.get_chat(update.message.chat.id)
     update_job_sunrise(chat[1],context)
     update_job_sunset(chat[1],context)
@@ -134,7 +134,7 @@ async def longitude_command(update: Update, context: CallbackContext):
     
     try:
         longitude = float(content)
-        localDatabase.setLongitude(longitude,update.message.chat.id)
+        localDatabase.set_longitude(longitude,update.message.chat.id)
         await update.message.reply_text("J'ai ta longitude")
     except:
         await update.message.reply_text("envoie moi un float!")
@@ -149,7 +149,7 @@ async def latitude_command(update: Update, context: CallbackContext):
     content = update.message.text.split(" ")[1]
     try:
         latitude = float(content)
-        localDatabase.setLatitude(latitude,update.message.chat.id)
+        localDatabase.set_latitude(latitude,update.message.chat.id)
         await update.message.reply_text("J'ai ta latitude")
     except:
         await update.message.reply_text("envoie moi un float!")
