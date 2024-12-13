@@ -1,4 +1,4 @@
-python-telegram-bot
-suntime
+python-telegram-bot==21.9
+suntime==1.2.5
 mysql-connector-python
 python-telegram-bot[job-queue]
